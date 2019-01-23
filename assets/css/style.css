@@ -1,0 +1,26 @@
+.button {
+    margin: 2px;
+}
+
+.row {
+    margin-top: 5px;
+}
+
+.gifImage {
+    height: 50%;
+    
+    
+}
+
+.gif {
+    width: 25%;
+    height:400px;
+}
+
+p {
+    font-size: 100%;
+} 
+
+.col {
+    padding: 2px;
+}
