@@ -12,19 +12,18 @@ function giphyCall() {
     }).then(function (response) {
         // $(".gifArea").html("");
         for (var i = 0; i < 10; i++) {
-            var gifDiv = $("<div class='gif float-left col'>");
+            var gifDiv = $("<div class='gif float-left col-4'>");
             var rating = $("<p>").text('Gif Rating: ' + response.data[i].rating);
-            var gifStill = response.data[i].images.fixed_width_still.url;
-            var gifAnimate = response.data[i].images.fixed_width.url;
-            var gifHtml = $("<img src=" + gifStill + ">");
+            var gifStill = response.data[i].images.fixed_height_still.url;
+            var gifAnimate = response.data[i].images.fixed_height.url;
+            var gifHtml = $("<img class='img-fluid' src=" + gifStill + ">");
             gifHtml.addClass("gifImage image-fluid");
             gifHtml.attr("src", gifStill);
             gifHtml.attr("data-still", gifStill);
             gifHtml.attr("data-animate", gifAnimate);
             gifDiv.append(gifHtml, rating);
             $(".gifArea").append(gifDiv);
-        }
-
+        };
     });
 }
 
@@ -42,6 +41,7 @@ function createButtons() {
         buttonNumber = "buttonNumber" + i;
         $('.buttons').append("<button class='button btn btn-outline-dark " + buttonNumber + "'>" + gameArray[i]);
     };
+    $('form').trigger('reset');
 };
 
 function addNewGame() {
